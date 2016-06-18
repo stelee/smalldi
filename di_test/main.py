@@ -39,7 +39,7 @@ class TestContextSingleton(unittest.TestCase):
         class MyService:
             def foo(self):
                 return 'bar'
-        @injection('MyService')
+        @inject('MyService')
         class MyUseService:
             pass
 
@@ -51,7 +51,7 @@ class TestContextSingleton(unittest.TestCase):
         class MyService2:
             def foo(self):
                 return 'bar'
-        @injection(MyService2='asMyService')
+        @inject(MyService2='asMyService')
         class MyUseService2:
             pass
         MyService2()

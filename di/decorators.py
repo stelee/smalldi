@@ -18,7 +18,7 @@ def component(*args, **kwargs):
         return get_instance
     return wrap_get_instance
 
-def injection(*args, **kwargs):
+def inject(*args, **kwargs):
     keyAsMap = [(item, item[0].lower() + item[1:]) for item in args] + [(key, kwargs[key]) for key in kwargs]
     def wrap_get_instance(clazz):
         context = Context()
